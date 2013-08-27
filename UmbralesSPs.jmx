@@ -177,7 +177,7 @@ http://localhost:8080/jenkins/job/Umbrales2/lastBuild/performance/</stringProp>
             <stringProp name="script">vars.put(&quot;ESTATUS_BD_MBS&quot;,    &quot;1&quot;);</stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_Insert_in_CstoAboCon_from_Abonado" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_Insert_in_CstoAboCon_from_Abonado" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -3360,7 +3360,7 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               </hashTree>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_CancelaInCsto_Abo_Consumo_From_Abonado" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_CancelaInCsto_Abo_Consumo_From_Abonado" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -4435,7 +4435,7 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_Update_in_CstoAboCon_from_Abonado" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_Update_in_CstoAboCon_from_Abonado" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -5697,7 +5697,7 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="FN -&gt; MBS.fn_ValidaModulo" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="FN -&gt; MBS.fn_ValidaModulo" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -10608,7 +10608,7 @@ VALUES (&apos;${ABO_CLIENTE}&apos;, IF( (${POR_CUENTA_B}=0) ,&apos;${ABO_MDN}&ap
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_CancelaIn_cstoAboCon_FromServUsu" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_CancelaIn_cstoAboCon_FromServUsu" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -12945,7 +12945,7 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_InsertIn_CstoAboCon_FromServUsu" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_InsertIn_CstoAboCon_FromServUsu" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -19352,7 +19352,7 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_UpdateIn_CstoAboCon_FromServUsu" enabled="false">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; MBS.sp_UpdateIn_CstoAboCon_FromServUsu" enabled="true">
             <boolProp name="TransactionController.parent">false</boolProp>
           </TransactionController>
           <hashTree>
@@ -27823,6 +27823,1618 @@ WHERE ABO_CLIENTE = &apos;${ABO_CLIENTE}&apos;
               <hashTree/>
             </hashTree>
           </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; sp_Update_in_CstoAboCon_from_Abonado_COM" enabled="true">
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="91. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, pero no hay umbrales configurados en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000091&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000091&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000091&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST91&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000091&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`,`TLL_CLAVE`,
+                       `DESVOL_CLAVE`,`TIPO_TARIFA`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,now(),
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0,0,null,1);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 1;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="48">0</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verificando el valor del parametro de salida del stored procedure." enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="48">0</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">P_RETURN_CODE</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="92. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel abonado y esta configurado por tipo de llamada(tll_clave&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000092&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000092&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000092&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST92&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000092&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,4,3000,0,0,0,0,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and 
+            ABO_MDN = &apos;${ABO_MDN}&apos; and 
+            SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 1;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49">1</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="93. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel de cuenta y esta configurado por tipo de llamada(tll_clave&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000093&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000093&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000093&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST93&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000093&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,4,3000,0,0,0,1,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 1;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49">1</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="94. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Esta configurada por dos tipos de llamada(tll_clave&gt;0), una a nivel de cuenta y otra a nivel de abonado esta configurado." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000094&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000094&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000094&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST94&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000094&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into `umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,
+                                                               `UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,`POR_CUENTA`,`UMBRAL_LC`,
+                                                               `USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,
+                                                                GRUPO_TLL_CLAVE_UMBRAL)
+                                                values (&apos;&apos;,0,0,4,3000,
+                                                              0,0,0,0,0,
+                                                              &apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},
+                                                              0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Segundo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+insert into `umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,
+                                                               `UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,`POR_CUENTA`,`UMBRAL_LC`,
+                                                               `USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,
+                                                                GRUPO_TLL_CLAVE_UMBRAL)
+                                                values (&apos;&apos;,0,0,89,4000,
+                                                              0,0,0,1,0,
+                                                              &apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},
+                                                              0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select 
+(
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} 
+    and ESTATUS = 1  and TLL_CLAVE = 89
+)
++
+(
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;${ABO_MDN}&apos;  and SER_CLAVE = ${SER_CLAVE1} 
+    and ESTATUS = 1 and TLL_CLAVE = 4
+);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="50">2</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="95. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel abonado y esta configurado por grupo de tipo de llamada umbral(GRUPO_TLL_CLAVE_UMBRAL&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000095&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000095&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000095&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST95&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000095&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,0,3000,0,0,0,0,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},5);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and 
+            ABO_MDN = &apos;${ABO_MDN}&apos; and 
+            SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 1;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49">1</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="96. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel de cuenta y esta configurado por grupo de tipo de llamada umbral(GRUPO_TLL_CLAVE_UMBRAL&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000096&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000096&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000096&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST96&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000096&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,0,3000,0,0,0,1,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},5);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 1;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49">1</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="97. Se solicita la activación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Esta configurada por dos grupos de tipo de llamada umbral(GRUPO_TLL_CLAVE_UMBRAL&gt;0), una a nivel de cuenta (POR_CUENTA=1) y otra a nivel de abonado (POR_CUENTA=0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call MBS.sp_Update_in_CstoAboCon_from_Abonado_COM (?,?,?,?,?,?);</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},COM,1,${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,INTEGER,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000097&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000097&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000097&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST97&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000097&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios del abonado - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into `umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,
+                                                               `UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,`POR_CUENTA`,`UMBRAL_LC`,
+                                                               `USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,
+                                                                GRUPO_TLL_CLAVE_UMBRAL)
+                                                values (&apos;&apos;,0,0,0,3000,
+                                                              0,0,0,0,0,
+                                                              &apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},
+                                                              4);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Segundo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+insert into `umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,
+                                                               `UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,`POR_CUENTA`,`UMBRAL_LC`,
+                                                               `USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,
+                                                                GRUPO_TLL_CLAVE_UMBRAL)
+                                                values (&apos;&apos;,0,0,0,4000,
+                                                              0,0,0,1,0,
+                                                              &apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},
+                                                              5);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select 
+(
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} 
+    and ESTATUS = 1  and TLL_CLAVE = 0 and GRUPO_TLL_CLAVE_UMBRAL = 5
+)
++
+(
+select count(*)
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;${ABO_MDN}&apos;  and SER_CLAVE = ${SER_CLAVE1} 
+    and ESTATUS = 1 and TLL_CLAVE = 0 and GRUPO_TLL_CLAVE_UMBRAL = 4
+);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">NUM_REG</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando el numero de registros en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="50">2</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">NUM_REG_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SP -&gt; sp_CancelaInCsto_Abo_Consumo_From_Abonado_COM" enabled="true">
+            <stringProp name="TestPlan.comments">Se simula la ejecución del procedimiento de BD que es ejecutado cuando el estatus del abonado cambia de activo a desactivo.</stringProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="98. Se solicita la desactivación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel abonado (POR_CUENTA=0) y esta configurado por tipo de llamada(tll_clave&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call sp_CancelaInCsto_Abo_Consumo_From_Abonado_COM(?,?,?,?);    
+</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000098&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000098&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000098&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST98&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000098&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios de umbral - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,4,3000,0,0,0,0,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicios en csto_abo_consumo - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">INSERT INTO`csto_abo_consumo`(`ABO_CLIENTE`,
+                              `ABO_MDN`,
+                              `ABO_GPO_T`,
+                              `ABO_CIC_CVE`,
+                              `TLL_CLAVE`,
+                              `GRUPO_CIUDAD`,
+                              `GRUPO_PAIS`,
+                              `LIM_CONSUMO`,
+                              `CONSUMO`,
+                              `CONSUMO_LC`,
+                              `LIM_CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO_LC`,
+                              `LLAM_REG`,
+                              `TIPO_COBRO`,
+                              `TIPO_REG`,
+                              `SER_CLAVE`,
+                              `PRECIO_ALT`,
+                              `USU_MOD`,
+                              `USU_REG`,
+                              `FEC_MOD`,
+                              `FEC_REG`,
+                              `CONSUMO_ANT`,
+                              `CONSUMO_EVENTO_ANT`,
+                              `ESTATUS`,
+                              `UMBRAL_LC`,
+	 GRUPO_TLL_CLAVE_UMBRAL)
+    VALUES (&apos;${CLI_CLIENTE}&apos;,
+            &apos;${ABO_MDN}&apos;,
+            &apos;COM&apos;,
+            1,
+            4,
+            0,
+            0,
+            3000,
+            3000,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            &apos;C&apos;,
+            &apos;${SER_CLAVE1}&apos;,
+            0,
+            &apos;CAMN9999&apos;,
+            &apos;CAMN9999&apos;,
+            now(),
+            now(),
+            0,
+            0,
+            1,
+            0,
+            0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select SER_CLAVE
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;${ABO_MDN}&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 0;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">SER_CLAVE1</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando información en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1025380323">${SER_CLAVE1}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">SER_CLAVE1_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="99. Se solicita la desactivación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel cuenta (POR_CUENTA=1)  y esta configurado por tipo de llamada(tll_clave&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call sp_CancelaInCsto_Abo_Consumo_From_Abonado_COM(?,?,?,?);    
+</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000099&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000099&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000099&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TEST99&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000099&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios de umbral - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,4,3000,0,0,0,1,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicios en csto_abo_consumo - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">INSERT INTO`csto_abo_consumo`(`ABO_CLIENTE`,
+                              `ABO_MDN`,
+                              `ABO_GPO_T`,
+                              `ABO_CIC_CVE`,
+                              `TLL_CLAVE`,
+                              `GRUPO_CIUDAD`,
+                              `GRUPO_PAIS`,
+                              `LIM_CONSUMO`,
+                              `CONSUMO`,
+                              `CONSUMO_LC`,
+                              `LIM_CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO_LC`,
+                              `LLAM_REG`,
+                              `TIPO_COBRO`,
+                              `TIPO_REG`,
+                              `SER_CLAVE`,
+                              `PRECIO_ALT`,
+                              `USU_MOD`,
+                              `USU_REG`,
+                              `FEC_MOD`,
+                              `FEC_REG`,
+                              `CONSUMO_ANT`,
+                              `CONSUMO_EVENTO_ANT`,
+                              `ESTATUS`,
+                              `UMBRAL_LC`,
+                               GRUPO_TLL_CLAVE_UMBRAL)
+    VALUES (&apos;${CLI_CLIENTE}&apos;,
+            &apos;ALL&apos;,
+            &apos;COM&apos;,
+            1,
+            4,
+            0,
+            0,
+            3000,
+            3000,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            &apos;C&apos;,
+            &apos;${SER_CLAVE1}&apos;,
+            0,
+            &apos;CAMN9999&apos;,
+            &apos;CAMN9999&apos;,
+            now(),
+            now(),
+            0,
+            0,
+            1,
+            0,
+            0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select SER_CLAVE
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 0;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">SER_CLAVE1</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando información en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1025380323">${SER_CLAVE1}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">SER_CLAVE1_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="100. Se solicita la desactivación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel abonado (POR_CUENTA=0) y esta configurado por grupo de tipo de llamada umbral(GRUPO_TLL_CLAVE_UMBRAL&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call sp_CancelaInCsto_Abo_Consumo_From_Abonado_COM(?,?,?,?);    
+</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000100&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000100&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000100&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TES100&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000100&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios de umbral - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,0,3000,0,0,0,0,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},4);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicios en csto_abo_consumo - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">INSERT INTO`csto_abo_consumo`(`ABO_CLIENTE`,
+                              `ABO_MDN`,
+                              `ABO_GPO_T`,
+                              `ABO_CIC_CVE`,
+                              `TLL_CLAVE`,
+                              `GRUPO_CIUDAD`,
+                              `GRUPO_PAIS`,
+                              `LIM_CONSUMO`,
+                              `CONSUMO`,
+                              `CONSUMO_LC`,
+                              `LIM_CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO_LC`,
+                              `LLAM_REG`,
+                              `TIPO_COBRO`,
+                              `TIPO_REG`,
+                              `SER_CLAVE`,
+                              `PRECIO_ALT`,
+                              `USU_MOD`,
+                              `USU_REG`,
+                              `FEC_MOD`,
+                              `FEC_REG`,
+                              `CONSUMO_ANT`,
+                              `CONSUMO_EVENTO_ANT`,
+                              `ESTATUS`,
+                              `UMBRAL_LC`,
+	 GRUPO_TLL_CLAVE_UMBRAL)
+    VALUES (&apos;${CLI_CLIENTE}&apos;,
+            &apos;${ABO_MDN}&apos;,
+            &apos;COM&apos;,
+            1,
+            0,
+            0,
+            0,
+            3000,
+            3000,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            &apos;C&apos;,
+            &apos;${SER_CLAVE1}&apos;,
+            0,
+            &apos;CAMN9999&apos;,
+            &apos;CAMN9999&apos;,
+            now(),
+            now(),
+            0,
+            0,
+            1,
+            0,
+            4);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select SER_CLAVE
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;${ABO_MDN}&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 0;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">SER_CLAVE1</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando información en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1025380323">${SER_CLAVE1}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">SER_CLAVE1_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="101. Se solicita la desactivación de un umbral(por medio de un servicio de umbral) en la tabla &quot;csto_abo_consumo&quot;, el umbral configurado en la tabla &quot;umbral_tipo_llamada&quot; para el servicio enviado tiene las siguientes caracterisiticas: Es a nivel cuenta (POR_CUENTA=1)  y esta configurado por grupo de tipo de llamada umbral(GRUPO_TLL_CLAVE_UMBRAL&gt;0)." enabled="true">
+              <stringProp name="dataSource">POOL_MBS</stringProp>
+              <stringProp name="query">
+call sp_CancelaInCsto_Abo_Consumo_From_Abonado_COM(?,?,?,?);    
+</stringProp>
+              <stringProp name="queryArguments">${CLI_CLIENTE},${ABO_MDN},${SER_CLAVE1},0</stringProp>
+              <stringProp name="queryArgumentsTypes">VARCHAR,VARCHAR,VARCHAR,OUT INTEGER</stringProp>
+              <stringProp name="queryType">Callable Statement</stringProp>
+              <stringProp name="resultVariable"></stringProp>
+              <stringProp name="variableNames">P_RETURN_CODE</stringProp>
+            </JDBCSampler>
+            <hashTree>
+              <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor - Establecer variables de la prueba" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">true</boolProp>
+                <stringProp name="script">vars.put(&quot;CLI_CLIENTE&quot;, &quot;99000101&quot;);
+vars.put(&quot;ABO_MDN&quot;,     &quot;5599000101&quot;);
+vars.put(&quot;SER_CLAVE1&quot;,   &quot;20000101&quot;);
+vars.put(&quot;FECHA_INICIO_FACTURACION&quot;,  &quot;&quot;);
+vars.put(&quot;PLAN_CLAVE&quot;,  &quot;PLN_TES101&quot;);
+vars.put(&quot;TAR_CLAVE&quot;,  &quot;TAR0000101&quot;);
+vars.put(&quot;NUM_REG&quot;,  &quot;&quot;);
+vars.put(&quot;P_RETURN_CODE&quot;,  &quot;-1&quot;); // Inicializando valor</stringProp>
+              </BeanShellPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion umbrales del cliente - csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from csto_abo_consumo where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos;;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de la configuracion de umbrales - umbral_tipo_llamada" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from umbral_tipo_llamada 
+where SER_CLAVE = ${SER_CLAVE1} and USU_REG = &apos;CAMN9999&apos;;
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Depurando informacion de los servicios de umbral - servicio" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">
+delete from servicio where SER_CLAVE = ${SER_CLAVE1};
+</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicio de umbral en el catalogo de productos - servicio - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into servicio(`SER_CLAVE`,`DESCRIPCION`,`SER_PREPAGO`,`SER_CST`,`SER_AFECTA`,`SER_USO_SW`,`SER_OI_SW`,`SER_PER_VIDA`,
+                       `SER_ASOCIADO`,`SER_COMERC`,`SER_IMPRIME`,`HOR_CLAVE`,`COMANDOSW`,`SER_2DOMDN`,`SER_PERFIL`,`TIPO_SERVICIO`,
+                       `DESCUENTO_MONTO`,`DESCUENTO_PORCENTAJE`,`FECHA_ACTIVACION`,`FECHA_FIN`,`FECHA_DESACTIVACION`,`ID_MOD_ALT`,
+                       `SW_FRECUENCIA`,`GRUPO`,`PLN_CLAVE`,`MONEDA`,`MOV_ASIG`,`MOV_CAN`,`USU_REG`,`USU_MOD`,`FEC_REG`,
+                       `FEC_MOD`,`SER_TIPO`,`SW_PRORRATEO`,`STATUS`,`SW_NIVEL`,`VERSION`,`SER_DUPLICADO`,`CARGO_MISC`)
+              values (${SER_CLAVE1},&apos;Servicio Test umbral x&apos;,0,0,1,0,0,1,&apos;null&apos;,1,1,&apos;null&apos;,&apos;null&apos;,0,1,&apos;TAR&apos;,0,0,&apos;2010-01-01 00:00:00&apos;,
+                      &apos;9999-01-01 00:00:00&apos;,&apos;9999-01-01 00:00:00&apos;,0,1,&apos;COM&apos;,&apos;null&apos;,&apos;MX&apos;,&apos;0&apos;,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),
+                      now(),&apos;VOZ&apos;,0,1,2,1,0,0);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando configuracion de umbral en umbral_tipo_llamada - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">insert into
+`umbral_tipo_llamada`(`PLN_CLAVE`,`GRUPO_CIUDAD`,`GRUPO_PAIS`,`TLL_CLAVE`,`UMBRAL`,`UMBRAL_EVENTO`,`TIPO_COBRO`,`STATUS_COBRO`,
+        `POR_CUENTA`,`UMBRAL_LC`,`USU_MOD`,`USU_REG`,`FEC_MOD`,`FEC_REG`,`SER_CLAVE`,GRUPO_TLL_CLAVE_UMBRAL)
+values (&apos;&apos;,0,0,0,3000,0,0,0,1,0,&apos;CAMN9999&apos;,&apos;CAMN9999&apos;,now(),now(),${SER_CLAVE1},4);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="Creando servicios en csto_abo_consumo - Primero" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Update Statement</stringProp>
+                <stringProp name="query">INSERT INTO`csto_abo_consumo`(`ABO_CLIENTE`,
+                              `ABO_MDN`,
+                              `ABO_GPO_T`,
+                              `ABO_CIC_CVE`,
+                              `TLL_CLAVE`,
+                              `GRUPO_CIUDAD`,
+                              `GRUPO_PAIS`,
+                              `LIM_CONSUMO`,
+                              `CONSUMO`,
+                              `CONSUMO_LC`,
+                              `LIM_CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO`,
+                              `CONSUMO_EVENTO_LC`,
+                              `LLAM_REG`,
+                              `TIPO_COBRO`,
+                              `TIPO_REG`,
+                              `SER_CLAVE`,
+                              `PRECIO_ALT`,
+                              `USU_MOD`,
+                              `USU_REG`,
+                              `FEC_MOD`,
+                              `FEC_REG`,
+                              `CONSUMO_ANT`,
+                              `CONSUMO_EVENTO_ANT`,
+                              `ESTATUS`,
+                              `UMBRAL_LC`,
+                               GRUPO_TLL_CLAVE_UMBRAL)
+    VALUES (&apos;${CLI_CLIENTE}&apos;,
+            &apos;ALL&apos;,
+            &apos;COM&apos;,
+            1,
+            0,
+            0,
+            0,
+            3000,
+            3000,
+            3000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            &apos;C&apos;,
+            &apos;${SER_CLAVE1}&apos;,
+            0,
+            &apos;CAMN9999&apos;,
+            &apos;CAMN9999&apos;,
+            now(),
+            now(),
+            0,
+            0,
+            1,
+            0,
+            4);</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames"></stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPreProcessor>
+              <hashTree/>
+              <JDBCPostProcessor guiclass="TestBeanGUI" testclass="JDBCPostProcessor" testname="Validando la tabla csto_abo_consumo" enabled="true">
+                <stringProp name="dataSource">POOL_MBS</stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="query">
+select SER_CLAVE
+from csto_abo_consumo 
+where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and SER_CLAVE = ${SER_CLAVE1} and ESTATUS = 0;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="variableNames">SER_CLAVE1</stringProp>
+                <stringProp name="resultVariable"></stringProp>
+              </JDBCPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Aserción de Respuesta - Verifiando información en csto_abo_consumo con los filtros correspondientes" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1025380323">${SER_CLAVE1}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">SER_CLAVE1_1</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Controlador If - No hay BD disponible - Se comento por que se delegaran las notificaciones a otro componente" enabled="false">
           <stringProp name="TestPlan.comments">Si la BD esta disponible que continue con la ejecucion de los scripts</stringProp>
@@ -28981,15 +30593,15 @@ where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and
         <stringProp name="checkQuery">Select 1</stringProp>
         <stringProp name="connectionAge">60000</stringProp>
         <stringProp name="dataSource">POOL_MBS</stringProp>
-        <stringProp name="dbUrl">XXXXXXXX</stringProp>
-        <stringProp name="driver">XXXXXXXX</stringProp>
+        <stringProp name="dbUrl">XXXXXX</stringProp>
+        <stringProp name="driver">XXXXXX</stringProp>
         <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="password">XXXXXXXX</stringProp>
+        <stringProp name="password">XXXXXX</stringProp>
         <stringProp name="poolMax">1</stringProp>
         <stringProp name="timeout">60</stringProp>
         <stringProp name="transactionIsolation">DEFAULT</stringProp>
         <stringProp name="trimInterval">60000</stringProp>
-        <stringProp name="username">XXXXXXXX</stringProp>
+        <stringProp name="username">XXXXXX</stringProp>
       </JDBCDataSource>
       <hashTree/>
       <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="Configuracion del pool de BD MBSTUNING - Por si se desea apuntar a otra BD para las pruebas" enabled="false">
@@ -28997,15 +30609,15 @@ where ABO_CLIENTE = &apos;${CLI_CLIENTE}&apos; and ABO_MDN = &apos;ALL&apos; and
         <stringProp name="checkQuery">Select 1</stringProp>
         <stringProp name="connectionAge">60000</stringProp>
         <stringProp name="dataSource">POOL_MBS</stringProp>
-        <stringProp name="dbUrl">XXXXXXXX</stringProp>
-        <stringProp name="driver">XXXXXXXX</stringProp>
+        <stringProp name="dbUrl">XXXXXX</stringProp>
+        <stringProp name="driver">XXXXXX</stringProp>
         <boolProp name="keepAlive">true</boolProp>
-        <stringProp name="password">XXXXXXXX</stringProp>
+        <stringProp name="password">XXXXXX</stringProp>
         <stringProp name="poolMax">1</stringProp>
         <stringProp name="timeout">60</stringProp>
         <stringProp name="transactionIsolation">DEFAULT</stringProp>
         <stringProp name="trimInterval">60000</stringProp>
-        <stringProp name="username">XXXXXXXX</stringProp>
+        <stringProp name="username">XXXXXX</stringProp>
       </JDBCDataSource>
       <hashTree/>
     </hashTree>
